@@ -35,4 +35,7 @@ function formatOriginal() {
 function setOutputLink(link) {
   outputLink.href = link;
   outputLink.innerHTML = link;
+  navigator.clipboard.writeText(link).catch(() => {
+    window.alert("could not copy to clipboard");
+  });
 }
